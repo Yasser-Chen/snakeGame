@@ -84,7 +84,7 @@ function isautoDestruct(){
 }
 
 
-setInterval(() => {
+const frames = setInterval(() => {
 
     if(foodX==x&&foodY==y){
         gameCashedSquares[foodX][foodY].classList.remove('food');
@@ -116,6 +116,7 @@ setInterval(() => {
 
     
     if(isautoDestruct()){
+        clearInterval(frames);
         alert("GAME OVER");
         window.location.reload();
     }
